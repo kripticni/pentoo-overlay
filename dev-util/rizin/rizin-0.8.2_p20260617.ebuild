@@ -3,14 +3,14 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 # This is the commit that the CI for the release commit used
 BINS_COMMIT="71482f7194847b4ece45a9e53f28085b6bab40a4"
 GITHUB_REPOSITORY="rizinorg/rizin"
 GITHUB_COMMIT="dfd83d77a445d71c0db7340e968582d192a3b0a7"
 
-inherit meson python-any-r1 github-snapshot
+inherit meson python-any-r1 github-archive
 
 DESCRIPTION="reverse engineering framework for binary analysis"
 HOMEPAGE="https://rizin.re/"
@@ -21,10 +21,10 @@ RIZIN_GRAMMAR_COMMIT="815845762d59f727d79e7aa6f810688b2e1e35d2"
 SOFTFLOAT_COMMIT="537d18e71a51aea70f6b54334854f7014c6458c7"
 
 SRC_URI+=" https://github.com/rizinorg/rz-libdemangle/archive/${LIBDEMANGLE_COMMIT}.tar.gz -> rz-libdemangle-${LIBDEMANGLE_COMMIT}.tar.gz
-    https://github.com/BLAKE2/BLAKE2/archive/${BLAKE2_COMMIT}.tar.gz -> BLACK2-${BLAKE2_COMMIT}.tar.gz
-    https://github.com/rizinorg/rizin-grammar-c/archive/${RIZIN_GRAMMAR_COMMIT}.tar.gz -> rizin-grammar-c-${RIZIN_GRAMMAR_COMMIT}.tar.gz
-    https://github.com/rizinorg/softfloat/archive/${SOFTFLOAT_COMMIT}.tar.gz -> softfloat-${SOFTFLOAT_COMMIT}.tar.gz
-    test? ( https://github.com/rizinorg/rizin-testbins/archive/${BINS_COMMIT}.tar.gz -> rizin-testbins-${BINS_COMMIT}.tar.gz )
+	https://github.com/BLAKE2/BLAKE2/archive/${BLAKE2_COMMIT}.tar.gz -> BLACK2-${BLAKE2_COMMIT}.tar.gz
+	https://github.com/rizinorg/rizin-grammar-c/archive/${RIZIN_GRAMMAR_COMMIT}.tar.gz -> rizin-grammar-c-${RIZIN_GRAMMAR_COMMIT}.tar.gz
+	https://github.com/rizinorg/softfloat/archive/${SOFTFLOAT_COMMIT}.tar.gz -> softfloat-${SOFTFLOAT_COMMIT}.tar.gz
+	test? ( https://github.com/rizinorg/rizin-testbins/archive/${BINS_COMMIT}.tar.gz -> rizin-testbins-${BINS_COMMIT}.tar.gz )
 "
 
 LICENSE="Apache-2.0 BSD LGPL-3 MIT"

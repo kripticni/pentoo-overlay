@@ -8,14 +8,10 @@ PYTHON_COMPAT=( python3_{11..14} )
 GITHUB_REPOSITORY="rizinorg/cutter"
 GITHUB_COMMIT="12c119fa857ba62ad3d4c23e6a413a8100961a69"
 
-inherit cmake xdg-utils python-single-r1 github-snapshot
-
-MY_P="${PN^}-v${PV}"
+inherit cmake xdg-utils python-single-r1 github-archive
 
 DESCRIPTION="A Qt and C++ GUI for rizin reverse engineering framework"
 HOMEPAGE="https://cutter.re https://github.com/rizinorg/cutter/"
-#SRC_URI="https://github.com/rizinorg/${PN}/releases/download/v${PV}/${MY_P}-src.tar.gz -> ${P}.tar.gz"
-#S="${WORKDIR}/${MY_P}"
 
 LICENSE="CC-BY-SA-3.0 GPL-3"
 SLOT="0"
